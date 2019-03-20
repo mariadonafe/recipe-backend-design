@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--top navigation start-->
+    <header class="bg-dark">
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark">
+                <a class="navbar-brand" href="#"><i class="fas fa-utensils pr-2"></i>Anthony's Recipes</a>
+                <ul class="nav d-none d-md-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-bell"></i><span class="badge badge-danger badge-pill" data-toggle="popover" title="Notifications" data-content="You have 1 new notification." data-placement="bottom">1</span>
+                        </a>
+                    </li>
+                    <!--username dropdown start-->
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" aria-label="Account Dropdown">
+                            <i class="fas fa-user pr-2"></i>Username
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="index.html">Sign Out</a>
+                        </div>
+                    </li>
+                    <!--username dropdown end-->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--top navigation end-->
+    <!--mobile navigation sm-md viewports start-->
+    <header class="bg-light d-lg-none border-bottom">
+        <div class="container-fluid">
+            <nav class="px-0 navbar navbar-expand-lg">
+                <form class="col-11">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
+                <button class="btn btn px-0 navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navToggler" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!--mobile collapse menu start-->
+                <div class="collapse navbar-collapse pl-3 pt-2" id="navToggler">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="home.html" class="nav-link text-dark">
+                                <i class="fas fa-home pr-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#recipesNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-book pr-2"></i>Recipes
+                            </a>
+                            <div class="collapse" id="recipesNav" aria-label="Recipes Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="new-recipe.html" class="nav-link text-dark">Create New Recipe</a>
+                                    <a href="submitted-recipes.html" class="nav-link text-dark">Recipe Submissions</a>
+                                    <a href="bookmarked-recipes.html" class="nav-link text-dark">Bookmarked Recipes</a>
+                                    <a href="#" class="nav-link text-dark">Published Recipes</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#profileNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-user pr-2"></i>Profile
+                            </a>
+                            <div class="collapse" id="profileNav" aria-label="Profile Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="#" class="nav-link text-dark">Edit Profile</a>
+                                    <a href="#" class="nav-link text-dark">View Profile</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#messageNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-envelope pr-2"></i>Messages
+                            </a>
+                            <div class="collapse" id="messageNav" aria-label="Message Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="#" class="nav-link text-dark">Compose</a>
+                                    <a href="#" class="nav-link text-dark">Inbox</a>
+                                    <a href="#" class="nav-link text-dark">Sent</a>
+                                    <a href="#" class="nav-link text-dark">Trash</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-bell pr-2"></i>Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-dark">
+                                <i class="fas fa-sign-out-alt pr-2"></i>Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--mobile collapse menu end-->
+            </nav>
+        </div>
+    </header>
+    <!--mobile navigation sm-md viewports end-->
+    <!--side navigation lg viewports start-->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="pt-3 col-lg-2 d-none d-lg-block bg-light border-right">
+                <ul class="nav flex-column" style="height: 100vh">
+                    <li class="nav-item">
+                        <form class="pb-3 border-bottom">
+                            <input class="form-control" type="text" placeholder="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link text-dark">
+                            <i class="fas fa-home pr-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#recipesSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-book pr-2"></i>Recipes
+                        </a>
+                        <div class="collapse" id="recipesSideNav" aria-label="Recipes Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a href="new-recipe.html" class="nav-link text-dark">Create New Recipe</a>
+                                <a href="submitted-recipes.html" class="nav-link text-dark">Recipe Submissions</a>
+                                <a class="nav-link text-dark" href="bookmarked-recipes.html">Bookmarked Recipes</a>
+                                <a class="nav-link text-dark" href="#">Published Recipes</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profileSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-user pr-2"></i>Profile
+                        </a>
+                        <div class="collapse" id="profileSideNav" aria-label="Profile Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a class="nav-link text-dark" href="#">Edit Profile</a>
+                                <a class="nav-link text-dark" href="#">View Profile</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messageSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-envelope pr-2"></i>Messages
+                        </a>
+                        <div class="collapse" id="messageSideNav" aria-label="Message Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a href="#" class="nav-link text-dark">Compose</a>
+                                <a href="#" class="nav-link text-dark">Inbox</a>
+                                <a href="#" class="nav-link text-dark">Sent</a>
+                                <a href="#" class="nav-link text-dark">Trash</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="fas fa-bell pr-2"></i> Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-dark"><i class="fas fa-sign-out-alt pr-2"></i> Log Out</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--side navigation lg viewports end-->
+            <!--main dashboard content-->
+            <main class="col-lg-7 ml-sm-auto pt-4">
+                <div class="container px-5">
+                    <div class="container border-bottom p-0">
+                        <h2 class="display-4">Edit Recipe</h2>
+                    </div>
+                    <!--author information start-->
+                    <div class="container p-0 pt-3">
+                        <div class="container p-0">
+                            <h3 class="display-5">Author Details</h3>
+                            <div class="row container">
+                                <div class="pr-4">
+                                    <p><span class="lead font-weight-bold pr-2">First Name:</span>Author's First Name</p>
+                                </div>
+                                <div class="pr-4">
+                                    <p><span class="lead font-weight-bold pr-2">Last Name:</span>Author's Last Name</p>
+                                </div>
+                            </div>
+                            <p><span class="lead font-weight-bold pr-2">Email Address:</span>Author's Email Address</p>
+                        </div>
+
+                        <!--author information end-->
+                        <!--step one start-->
+                        <div class="container p-0 pt-3">
+                            <div class="row m-0 justify-content-between">
+                                <h3 class="display-5">Step 1: Recipe Overview</h3>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editOverview"><i class="fas fa-edit pr-2"></i>Edit</button>
+                                <!--recipe overview edit modal start-->
+                                <div class="modal fade" id="editOverview" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">1. Edit Recipe Overview</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body pt-0">
+                                                <div class="form-group">
+                                                    <label class="lead pt-3 mb-2 font-weight-bold">Recipe Name</label>
+                                                    <textarea class="form-control" rows="1">Chocolate Chip Cookies</textarea>
+                                                    <!--description tabs start-->
+                                                    <p class="lead pt-3 mb-0 font-weight-bold">Recipe Description</p>
+                                                    <small class="form-text text-muted mt-0 pb-3">Max: 250 words</small>
+                                                    <nav>
+                                                        <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
+                                                            <a class="nav-item nav-link active text-dark" id="nav-text-tab" data-toggle="tab" href="#nav-text" role="tab" aria-controls="nav-text" aria-selected="true">Rich Text</a>
+                                                            <a class="nav-item nav-link text-dark" id="nav-html-tab" data-toggle="tab" href="#nav-html" role="tab" aria-controls="nav-html" aria-selected="false">HTML</a>
+                                                        </div>
+                                                    </nav>
+                                                    <div class="tab-content" id="nav-tabContent">
+                                                        <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-text-tab">
+                                                            <!--rich text content start-->
+                                                            <div class="container py-2">
+                                                                <div class="row">
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Bold">
+                                                                                  <i class="text-muted fas fa-bold px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Italic">
+                                                                                  <i class="text-muted fas fa-italic px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Underline">
+                                                                                  <i class="text-muted fas fa-underline px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Strikethrough">
+                                                                                  <i class="text-muted fas fa-strikethrough px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Numbered List">
+                                                                                  <i class="text-muted fas fa-list-ol px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Bullet List">
+                                                                                  <i class="text-muted fas fa-list-ul px-3"></i>
+                                                                              </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Blockquote">
+                                                                                <i class="text-muted fas fa-quote-left px-3"></i>
+                                                                            </span>
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="Link">
+                                                                                <i class="text-muted fas fa-link px-3"></i>
+                                                                            </span>
+                                                                </div>
+                                                            </div>
+                                                            <textarea class="form-control" rows="8" id="description">Wafer cookie carrot cake soufflé jelly brownie sweet roll dessert. Liquorice tart chupa chups toffee. Cheesecake cupcake gingerbread cake wafer fruitcake candy canes bonbon gingerbread. Powder dessert tiramisu candy canes sesame snaps brownie sesame snaps. Chocolate cake apple pie marshmallow bear claw chocolate soufflé dessert. Chocolate cake powder chocolate cake marzipan cheesecake jelly-o. Gummi bears topping caramels sesame snaps. Chocolate bar macaroon brownie gummi bears. Sugar plum liquorice icing danish chupa chups marshmallow pastry gingerbread chupa chups. Candy liquorice donut. Apple pie gingerbread gingerbread cheesecake liquorice cotton candy dragée cake. Caramels cotton candy gummi bears croissant marshmallow chocolate bar. Gummies dessert macaroon bonbon danish. Caramels powder tiramisu candy topping.</textarea>
+                                                            <!--rich text content end-->
+                                                        </div>
+                                                        <div class="tab-pane fade" id="nav-html" role="tabpanel" aria-labelledby="nav-html-tab">
+                                                            <textarea class="mt-3 form-control" id="descriptionHTML" rows="8">
+                                                                <p>Wafer cookie carrot cake soufflé jelly brownie sweet roll dessert. Liquorice tart chupa chups toffee. Cheesecake cupcake gingerbread cake wafer fruitcake candy canes bonbon gingerbread. Powder dessert tiramisu candy canes sesame snaps brownie sesame snaps. Chocolate cake apple pie marshmallow bear claw chocolate soufflé dessert. Chocolate cake powder chocolate cake marzipan cheesecake jelly-o. Gummi bears topping caramels sesame snaps. Chocolate bar macaroon brownie gummi bears. Sugar plum liquorice icing danish chupa chups marshmallow pastry gingerbread chupa chups. Candy liquorice donut. Apple pie gingerbread gingerbread cheesecake liquorice cotton candy dragée cake. Caramels cotton candy gummi bears croissant marshmallow chocolate bar. Gummies dessert macaroon bonbon danish. Caramels powder tiramisu candy topping.</p>
+                                                            </textarea>
+                                                        </div>
+                                                        <small class="form-text text-muted mt-0 mb-4">Word Count: 109 words</small>
+                                                        <!--description tabs end-->
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--recipe overview edit modal end-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--recipe overview content start-->
+                            <div class="container px-0 pt-2">
+                                <p class="lead mb-0 py-1"><span class="font-weight-bold pr-2">Recipe Name:</span> Chocolate Chip Cookies</p>
+                                <p class="lead mb-0 font-weight-bold py-1">Recipe Description:</p>
+                                <p>Wafer cookie carrot cake soufflé jelly brownie sweet roll dessert. Liquorice tart chupa chups toffee. Cheesecake cupcake gingerbread cake wafer fruitcake candy canes bonbon gingerbread. Powder dessert tiramisu candy canes sesame snaps brownie sesame snaps. Chocolate cake apple pie marshmallow bear claw chocolate soufflé dessert. Chocolate cake powder chocolate cake marzipan cheesecake jelly-o. Gummi bears topping caramels sesame snaps. Chocolate bar macaroon brownie gummi bears. Sugar plum liquorice icing danish chupa chups marshmallow pastry gingerbread chupa chups. Candy liquorice donut. Apple pie gingerbread gingerbread cheesecake liquorice cotton candy dragée cake. Caramels cotton candy gummi bears croissant marshmallow chocolate bar. Gummies dessert macaroon bonbon danish. Caramels powder tiramisu candy topping.</p>
+                            </div>
+                            <!--recipe overview content end-->
+                            <!--step one end-->
+                            <!--step two start-->
+                            <div class="container p-0 pt-4">
+                                <div class="row m-0 justify-content-between">
+                                    <h3 class="display-5">Step 2: Recipe Lists</h3>
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editLists"><i class="fas fa-edit pr-2"></i>Edit</button>
+                                    <!--recipe lists edit modal start-->
+                                    <div class="modal fade" id="editLists" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">2. Edit Recipe Lists</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body pt-0">
+                                                    <div class="container">
+                                                        <p class="lead pt-3 mb-0 font-weight-bold">Ingredient List</p>
+                                                        <div class="card border-0">
+                                                            <div class="card-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">&#9679;</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="1">1 cup butter, softened</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">&#9679;</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="1">1/2 cup granulated sugar</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">&#9679;</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="1">2 eggs</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">&#9679;</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="1">2-1/4 cups flour</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">&#9679;</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="1">300 g semi-sweet chocolate chips</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row">
+                                                                        <a class="btn btn-secondary" data-toggle="collapse" href="#ingredientExpand" role="button">
+                                                                                  Add more ingredients
+                                                                                </a>
+                                                                        <div class="collapse container" id="ingredientExpand">
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">&#9679;</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <input type="text" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">&#9679;</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <input type="text" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">&#9679;</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <input type="text" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <p class="lead pt-3 mb-0 font-weight-bold">Instructions</p>
+                                                        <div class="card border-0">
+                                                            <div class="card-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">1.</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="3">Preheat oven to 375°F.</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">2.</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="3">Beat butter, sugars, eggs, and vanilla in large bowl until light and fluffy. Stir in flour and baking soda until well blended. Add chocolate chips; mix well.</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">3.</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="3">Drop tablespoonfuls of dough, 2 inches a part, onto baking sheets.</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">4.</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="3">Bake 10 to 12 minutes or until lightly browned.</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row mb-3">
+                                                                        <div>
+                                                                            <p class="pt-1">5</p>
+                                                                        </div>
+                                                                        <div class="col pr-0">
+                                                                            <textarea class="form-control" rows="3">Cool on baking sheet for 3 minutes. Remove to wire racks; cool completely.</textarea>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li class="row">
+                                                                        <a class="btn btn-secondary" data-toggle="collapse" href="#instructionExpand" role="button">
+                                                                                Add more steps
+                                                                            </a>
+                                                                        <div class="collapse container" id="instructionExpand">
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">6.</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <textarea class="form-control" rows="3"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">7.</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <textarea class="form-control" rows="3"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row mt-3 p-0">
+                                                                                <div>
+                                                                                    <p class="pt-1">8.</p>
+                                                                                </div>
+                                                                                <div class="col pr-0">
+                                                                                    <textarea class="form-control" rows="3"></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--recipe lists edit modal end-->
+                                    <!--recipe lists content start-->
+                                    <div class="container px-0 pt-2">
+                                        <div class="container p-0">
+                                            <p class="lead mb-0 py-1 font-weight-bold">Ingredient List:</p>
+                                            <ul>
+                                                <li>1 cup butter, softened</li>
+                                                <li>1/2 cup granulated sugar</li>
+                                                <li>2 eggs</li>
+                                                <li>2-1/4 cups flour</li>
+                                                <li>300 g semi-sweet chocolate chips</li>
+                                            </ul>
+                                        </div>
+                                        <div class="container p-0">
+                                            <p class="lead mb-0 py-1 font-weight-bold">Instructions:</p>
+                                            <ol>
+                                                <li>Preheat oven to 375°F.</li>
+                                                <li>Beat butter, sugars, eggs, and vanilla in large bowl until light and fluffy. Stir in flour and baking soda until well blended. Add chocolate chips; mix well.</li>
+                                                <li>Drop tablespoonfuls of dough, 2 inches a part, onto baking sheets.</li>
+                                                <li>Bake 10 to 12 minutes or until lightly browned.</li>
+                                                <li>Cool on baking sheet for 3 minutes. Remove to wire racks; cool completely.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <!--recipe lists content end-->
+                                </div>
+                                <!--step two end-->
+                                <!--step three start-->
+                                <div class="container p-0 pt-4">
+                                    <div class="row m-0 justify-content-between">
+                                        <h3 class="display-5">Step 3: Recipe Specifications</h3>
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editSpecs"><i class="fas fa-edit pr-2"></i>Edit</button>
+                                        <!--recipe lists edit modal start-->
+                                        <div class="modal fade" id="editSpecs" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">3. Edit Recipe Specifications</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body pt-0">
+                                                        <form class="row container pt-3">
+                                                            <div class="col-4">
+                                                                <label class="lead font-weight-bold">Serving Size:</label>
+                                                                <div class="row container">
+                                                                    <textarea class="form-control col" rows="1">5</textarea>
+                                                                    <p class="col pt-2 pl-2">Person(s)</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label class="lead font-weight-bold">Prep Time:</label>
+                                                                <div class="row container">
+                                                                    <textarea class="form-control col" rows="1">20</textarea>
+                                                                    <p class="col pt-2 pl-2">Minute(s)</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label class="lead font-weight-bold">Cook Time:</label>
+                                                                <div class="row container">
+                                                                    <textarea class="form-control col" rows="1">10-15</textarea>
+                                                                    <p class="col pt-2 pl-2">Minute(s)</p>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        <div class="container pt-3">
+                                                            <p class="lead mb-0 font-weight-bold pb-2">Upload Image</p>
+                                                            <div class="custom-file mb-3">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label text-muted" for="customFile">Upload an Image</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--recipe specs edit modal end-->
+                                    <!--recipe specs content start-->
+                                    <div class="container px-0 pt-2 pb-5">
+                                        <div class="row container">
+                                            <div class="pr-4">
+                                                <p><span class="lead font-weight-bold pr-2">Serving Size:</span>5 person(s)</p>
+                                            </div>
+                                            <div class="pr-4">
+                                                <p><span class="lead font-weight-bold pr-2">Prep Time:</span>20 minute(s)</p>
+                                            </div>
+                                            <div class="pr-4">
+                                                <p><span class="lead font-weight-bold pr-2">Cook Time:</span>10-15 minute(s)</p>
+                                            </div>
+                                        </div>
+                                        <p class="lead font-weight-bold">
+                                            Uploaded Image:
+                                        </p>
+                                        <img class="img-fluid img-thumbnail" src="https://dummyimage.com/800x300/a0a6ac/ffffff.jpg" alt="Recipe Image Placeholder">
+
+                                    </div>
+                                    <!--recipe specs content end-->
+                                    <!--step three end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--editing options sm-md viewport start-->
+                    <div class="card mb-5 d-lg-none">
+                        <div class="card-header">
+                            Editing Options
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-2">
+                                    <i class="fas fa-folder-plus pr-2"></i>Category:
+                                    <div class="card mt-2">
+                                        <div class="card-body" style="height:15em; overflow:auto;">
+                                            <p class="font-weight-bold mb-2">Meal Type</p>
+                                            <div class="row container pl-4 justify-content-between">
+                                                <div class="col">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="mainDishes1" name="mealtype" value="option1">
+                                                        <label class="form-check-label" for="mainDishes1">
+                                                            Main Dishes
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="sideDishes1" name="mealtype" value="option2">
+                                                        <label class="form-check-label" for="sideDishes1">
+                                                            Side Dishes
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="salads1" name="mealtype" value="option3">
+                                                        <label class="form-check-label" for="salads1">
+                                                            Salads
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="lunch1" name="mealtype" value="option4">
+                                                        <label class="form-check-label" for="lunch1">
+                                                            Lunch
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="soups1" name="mealtype" value="option5">
+                                                        <label class="form-check-label" for="soups1">
+                                                            Soups
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="snacks1" name="mealtype" value="option6">
+                                                        <label class="form-check-label" for="snacks1">
+                                                            Appetizers/Snacks
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="breakfasts1" name="mealtype" value="option7">
+                                                        <label class="form-check-label" for="breakfasts1">
+                                                            Breakfast & Brunch </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="font-weight-bold my-2">Season</p>
+                                            <div class="row container pl-4 justify-content-between">
+                                                <div class="col">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="summer1" name="season" value="option1">
+                                                        <label class="form-check-label" for="summer1">
+                                                            Summer </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="winter1" name="season" value="option2">
+                                                        <label class="form-check-label" for="winter1">
+                                                            Winter </label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="autumn1" name="season" value="option3">
+                                                        <label class="form-check-label" for="autumn1">
+                                                            Autumn/Thanksgiving</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col">
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="holiday1" name="season" value="option4">
+                                                        <label class="form-check-label" for="holiday1">
+                                                            Holiday Season</label>
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-check-input" type="radio" id="any1" name="season" value="option5">
+                                                        <label class="form-check-label" for="any1">
+                                                            Any time </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="font-weight-bold my-2">Diet</p>
+                                            <div class="row container pl-1 justify-content-between">
+                                                <div class="col">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="vegeterian1">
+                                                        <label class="custom-control-label" for="vegeterian1">Vegeterian Friendly</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="vegan1">
+                                                        <label class="custom-control-label" for="vegan1">Vegan Friendly</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="glutenfree1">
+                                                        <label class="custom-control-label" for="glutenfree1">Gluten-Free</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="peanutfree1">
+                                                        <label class="custom-control-label" for="peanutfree1">Peanut-Free</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-4">
+                                    <div class="row justify-content-between">
+                                        <div><i class="fas fa-pen pr-2"></i> Status: <span class="font-weight-bold">Draft</span></div>
+                                        <div><a href="#">Edit</a></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-4">
+                                    <div class="row justify-content-between">
+                                        <div><i class="fas fa-eye pr-2"></i>Visibility: <span class="font-weight-bold">Public</span></div>
+                                        <div><a href="#">Edit</a></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-2 pb-3">
+                                    <div>
+                                        <i class="fas fa-calendar-alt pr-2"></i>Publish:
+                                        <div class="row pt-2 px-3">
+                                            <div class="col p-0">
+                                                <input type="text" class="form-control" id="dateMonths2" placeholder="MM">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" id="dateDay2" placeholder="DD">
+                                            </div>
+                                            <div class="col p-0">
+                                                <input type="text" class="form-control" id="dateYear2" placeholder="YYYY">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="card-footer bg-white pb-0">
+                                    <div class="row justify-content-between">
+                                        <button type="button" class="btn btn-primary">Save Edit</button>
+                                        <button type="button" class="btn btn-success">Publish</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--editing options sm-md viewport end-->
+                </div>
+            </main>
+            <aside class="col-3 d-none d-lg-block p-4 mt-4">
+                <div class="row">
+                    <!--editing options card on lg viewport start-->
+                    <div class="card mr-5 position-fixed">
+                        <div class="card-header">
+                            Editing Options
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                    <li class="list-group-item px-2 pt-0">
+                                            <i class="fas fa-folder-plus pr-2"></i>Category:
+                                            <div class="card mt-2">
+                                                <div class="card-body" style="height:15em; overflow:auto;">
+                                                    <p class="font-weight-bold mb-2">Meal Type</p>
+                                                    <div class="row container pl-4 justify-content-between">
+                                                        <div class="col">
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="mainDishes2" name="mealtype" value="option1">
+                                                                <label class="form-check-label" for="mainDishes2">
+                                                                    Main Dishes
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="sideDishes2" name="mealtype" value="option2">
+                                                                <label class="form-check-label" for="sideDishes2">
+                                                                    Side Dishes
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="salads2" name="mealtype" value="option3">
+                                                                <label class="form-check-label" for="salads2">
+                                                                 Salads                                                                    
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="lunch2" name="mealtype" value="option4">
+                                                                <label class="form-check-label" for="lunch2">
+                                                                    Lunch
+                                                                </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="soups2" name="mealtype" value="option5">
+                                                                <label class="form-check-label" for="soups2">
+                                                                    Soups
+                                                                </label>
+                                                            </div>
+        
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="snacks2" name="mealtype" value="option6">
+                                                                <label class="form-check-label" for="snacks2">
+                                                                    Appetizers/Snacks </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="breakfasts2" name="mealtype" value="option7">
+                                                                <label class="form-check-label" for="breakfasts2">
+                                                                    Breakfast & Brunch
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="font-weight-bold my-2">Season</p>
+                                                    <div class="row container pl-4 justify-content-between">
+                                                        <div class="col">
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="summer2" name="season" value="option1">
+                                                                <label class="form-check-label" for="summer2">
+                                                                    Summer </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="winter2" name="season" value="option2">
+                                                                <label class="form-check-label" for="winter2">
+                                                                    Winter </label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="autumn2" name="season" value="option3">
+                                                                <label class="form-check-label" for="autumn2">
+                                                                    Autumn/Thanksgiving</label>
+                                                            </div>
+        
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="holiday2" name="season" value="option4">
+                                                                <label class="form-check-label" for="holiday2">
+                                                                    Holiday Season</label>
+                                                            </div>
+                                                            <div>
+                                                                <input class="form-check-input" type="radio" id="any2" name="season" value="option5">
+                                                                <label class="form-check-label" for="any2">
+                                                                    Any time </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="font-weight-bold my-2">Diet</p>
+                                                    <div class="row container pl-1 justify-content-between">
+                                                        <div class="col">
+                                                            <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                                <input type="checkbox" class="custom-control-input" id="vegeterian2">
+                                                                <label class="custom-control-label" for="vegeterian2">Vegeterian Friendly</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                                <input type="checkbox" class="custom-control-input" id="vegan2">
+                                                                <label class="custom-control-label" for="vegan2">Vegan Friendly</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                                <input type="checkbox" class="custom-control-input" id="glutenfree2">
+                                                                <label class="custom-control-label" for="glutenfree2">Gluten-Free</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                                <input type="checkbox" class="custom-control-input" id="peanutfree2">
+                                                                <label class="custom-control-label" for="peanutfree2">Peanut-Free</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                <li class="list-group-item px-4">
+                                    <div class="row justify-content-between">
+                                        <div><i class="fas fa-pen pr-2"></i> Status: <span class="font-weight-bold">Draft</span></div>
+                                        <div><a href="#">Edit</a></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-4">
+                                    <div class="row justify-content-between">
+                                        <div><i class="fas fa-eye pr-2"></i>Visibility: <span class="font-weight-bold">Public</span></div>
+                                        <div><a href="#">Edit</a></div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-2">
+                                    <div>
+                                        <i class="fas fa-calendar-alt pr-2"></i>Publish:
+                                        <div class="row pt-2 px-3">
+                                            <div class="col p-0">
+                                                <input type="text" class="form-control" id="dateMonths1" placeholder="MM">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control" id="dateDay1" placeholder="DD">
+                                            </div>
+                                            <div class="col p-0">
+                                                <input type="text" class="form-control" id="dateYear1" placeholder="YYYY">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <div class="card-footer bg-white pb-0">
+                                    <div class="row justify-content-between">
+                                        <button type="button" class="btn btn-primary">Save Edit</button>
+                                        <button type="button" class="btn btn-success">Publish</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--editing options card on lg viewport end-->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+</body>
+
+</html>

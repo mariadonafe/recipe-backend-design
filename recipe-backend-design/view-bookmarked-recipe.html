@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--top navigation start-->
+    <header class="bg-dark">
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark">
+                <a class="navbar-brand" href="#"><i class="fas fa-utensils pr-2"></i>Anthony's Recipes</a>
+                <ul class="nav d-none d-md-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <i class="fas fa-bell"></i><span class="badge badge-danger badge-pill" data-toggle="popover" title="Notifications" data-content="You have 1 new notification." data-placement="bottom">1</span>
+                        </a>
+                    </li>
+                    <!--username dropdown start-->
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" aria-label="Account Dropdown">
+                            <i class="fas fa-user pr-2"></i>Username
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="index.html">Sign Out</a>
+                        </div>
+                    </li>
+                    <!--username dropdown end-->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--top navigation end-->
+    <!--mobile navigation sm-md viewports start-->
+    <header class="bg-light d-lg-none border-bottom">
+        <div class="container-fluid">
+            <nav class="px-0 navbar navbar-expand-lg">
+                <form class="col-11">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
+                <button class="btn btn px-0 navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navToggler" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!--mobile collapse menu start-->
+                <div class="collapse navbar-collapse pl-3 pt-2" id="navToggler">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="home.html" class="nav-link text-dark">
+                                <i class="fas fa-home pr-2"></i>Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#recipesNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-book pr-2"></i>Recipes
+                            </a>
+                            <div class="collapse" id="recipesNav" aria-label="Recipes Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="new-recipe.html" class="nav-link text-dark">Create New Recipe</a>
+                                    <a href="submitted-recipes.html" class="nav-link text-dark">Recipe Submissions</a>
+                                    <a href="bookmarked-recipes.html" class="nav-link text-dark">Bookmarked Recipes</a>
+                                    <a href="#" class="nav-link text-dark">Published Recipes</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#profileNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-user pr-2"></i>Profile
+                            </a>
+                            <div class="collapse" id="profileNav" aria-label="Profile Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="#" class="nav-link text-dark">Edit Profile</a>
+                                    <a href="#" class="nav-link text-dark">View Profile</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#messageNav" data-toggle="collapse" class="nav-link text-dark">
+                                <i class="fas fa-envelope pr-2"></i>Messages
+                            </a>
+                            <div class="collapse" id="messageNav" aria-label="Message Navigation">
+                                <nav class="nav flex-column pl-4">
+                                    <a href="#" class="nav-link text-dark">Compose</a>
+                                    <a href="#" class="nav-link text-dark">Inbox</a>
+                                    <a href="#" class="nav-link text-dark">Sent</a>
+                                    <a href="#" class="nav-link text-dark">Trash</a>
+                                </nav>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark">
+                                <i class="fas fa-bell pr-2"></i>Notifications
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-dark">
+                                <i class="fas fa-sign-out-alt pr-2"></i>Sign Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--mobile collapse menu end-->
+            </nav>
+        </div>
+    </header>
+    <!--mobile navigation sm-md viewports end-->
+    <!--side navigation lg viewports start-->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="pt-3 col-lg-2 d-none d-lg-block bg-light border-right">
+                <ul class="nav flex-column" style="height: 100vh">
+                    <li class="nav-item">
+                        <form class="pb-3 border-bottom">
+                            <input class="form-control" type="text" placeholder="Search">
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link text-dark">
+                            <i class="fas fa-home pr-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#recipesSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-book pr-2"></i>Recipes
+                        </a>
+                        <div class="collapse" id="recipesSideNav" aria-label="Recipes Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a href="new-recipe.html" class="nav-link text-dark">Create New Recipe</a>
+                                <a href="submitted-recipes.html" class="nav-link text-dark">Recipe Submissions</a>
+                                <a class="nav-link text-dark" href="bookmarked-recipes.html">Bookmarked Recipes</a>
+                                <a class="nav-link text-dark" href="#">Published Recipes</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profileSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-user pr-2"></i>Profile
+                        </a>
+                        <div class="collapse" id="profileSideNav" aria-label="Profile Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a class="nav-link text-dark" href="#">Edit Profile</a>
+                                <a class="nav-link text-dark" href="#">View Profile</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#messageSideNav" data-toggle="collapse" class="nav-link text-dark">
+                            <i class="fas fa-envelope pr-2"></i>Messages
+                        </a>
+                        <div class="collapse" id="messageSideNav" aria-label="Message Side Navigation">
+                            <nav class="nav flex-column pl-4">
+                                <a href="#" class="nav-link text-dark">Compose</a>
+                                <a href="#" class="nav-link text-dark">Inbox</a>
+                                <a href="#" class="nav-link text-dark">Sent</a>
+                                <a href="#" class="nav-link text-dark">Trash</a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark"><i class="fas fa-bell pr-2"></i> Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link text-dark"><i class="fas fa-sign-out-alt pr-2"></i> Log Out</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--side navigation lg viewports end-->
+            <!--main dashboard content-->
+            <main class="col-lg-10 ml-sm-auto p-4">
+                <div class="container">
+                    <div class="row justify-content-between p-0 border-bottom mb-4">
+                        <h2 class="display-4">Recipe Name</h2>
+                        <div class="my-3">
+                            <div class="row">
+                                <!--bookmark modal start-->
+                                <a href="#" role="button" class="btn btn-primary mr-2 " data-toggle="modal" data-target="#removeBookmark"><i class="fas fa-bookmark pr-2"></i>Unbookmark Recipe</a>
+                                <!--bookmark modal start-->
+                                <div class="modal fade" id="removeBookmark" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Remove Bookmark</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to remove bookmarked recipe?
+                                                <div class="modal-footer mt-3 pb-0">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    <button type="button" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--bookmark modal end-->
+                                <div class="dropdown">
+                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true">
+                                        <i class="fas fa-cog pr-2"></i>Recipe Options
+                                    </a>
+
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="edit-recipe.html">Edit Recipe</a>
+                                        <a class="dropdown-item" href="#">Publish Recipe</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Delete Recipe</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container p-0 mb-4">
+                    <p class="lead text-muted">Category: meal type, season, diet, etc.</p>
+                    <h3 class="display-5">Author Details</h3>
+                    <div class="row container">
+                        <div class="pr-4">
+                            <p><span class="lead font-weight-bold pr-2">First Name:</span>Author's First Name</p>
+                        </div>
+                        <div class="pr-4">
+                            <p><span class="lead font-weight-bold pr-2">Last Name:</span>Author's Last Name</p>
+                        </div>
+                    </div>
+                    <p><span class="lead font-weight-bold pr-2">Email Address:</span>Author's Email Address</p>
+                    <h3 class="display-5 pt-4">Recipe Overview</h3>
+                    <p class="lead mb-0 font-weight-bold py-1">Recipe Description:</p>
+                    <p>Wafer cookie carrot cake soufflé jelly brownie sweet roll dessert. Liquorice tart chupa chups toffee. Cheesecake cupcake gingerbread cake wafer fruitcake candy canes bonbon gingerbread. Powder dessert tiramisu candy canes sesame snaps brownie sesame snaps. Chocolate cake apple pie marshmallow bear claw chocolate soufflé dessert. Chocolate cake powder chocolate cake marzipan cheesecake jelly-o. Gummi bears topping caramels sesame snaps. Chocolate bar macaroon brownie gummi bears. Sugar plum liquorice icing danish chupa chups marshmallow pastry gingerbread chupa chups. Candy liquorice donut. Apple pie gingerbread gingerbread cheesecake liquorice cotton candy dragée cake. Caramels cotton candy gummi bears croissant marshmallow chocolate bar. Gummies dessert macaroon bonbon danish. Caramels powder tiramisu candy topping.</p>
+                    <h3 class="display-5 pt-4">Recipe Lists</h3>
+                    <p class="lead mb-0 py-1 font-weight-bold">Ingredient List:</p>
+                    <ul>
+                        <li>1 cup butter, softened</li>
+                        <li>1/2 cup granulated sugar</li>
+                        <li>2 eggs</li>
+                        <li>2-1/4 cups flour</li>
+                        <li>300 g semi-sweet chocolate chips</li>
+                    </ul>
+                    <p class="lead mb-0 py-1 font-weight-bold">Instructions:</p>
+                    <ol>
+                        <li>Preheat oven to 375°F.</li>
+                        <li>Beat butter, sugars, eggs, and vanilla in large bowl until light and fluffy. Stir in flour and baking soda until well blended. Add chocolate chips; mix well.</li>
+                        <li>Drop tablespoonfuls of dough, 2 inches a part, onto baking sheets.</li>
+                        <li>Bake 10 to 12 minutes or until lightly browned.</li>
+                        <li>Cool on baking sheet for 3 minutes. Remove to wire racks; cool completely.</li>
+                    </ol>
+                    <h3 class="display-5 pt-4">Recipe Specifications</h3>
+                    <div class="row container">
+                        <div class="pr-4">
+                            <p><span class="lead font-weight-bold pr-2">Serving Size:</span>5 person(s)</p>
+                        </div>
+                        <div class="pr-4">
+                            <p><span class="lead font-weight-bold pr-2">Prep Time:</span>20 minute(s)</p>
+                        </div>
+                        <div class="pr-4">
+                            <p><span class="lead font-weight-bold pr-2">Cook Time:</span>10-15 minute(s)</p>
+                        </div>
+                    </div>
+                    <p class="lead font-weight-bold">
+                        Attached Image:
+                    </p>
+                    <img class="img-fluid img-thumbnail" src="https://dummyimage.com/800x300/a0a6ac/ffffff.jpg" alt="Recipe Image Placeholder">
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+ <!--bookmark modal start-->
+                            <a href="#" role="button" class="btn btn-primary mr-2 " data-toggle="modal" data-target="#bookmarkModal"><i class="far fa-bookmark pr-2"></i>Bookmark Recipe</a>
+                            <div class="modal fade" id="bookmarkModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Bookmark Recipe by Category</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!--meal type start-->
+                                            <h6>Meal Type</h6>
+                                            <div class="row container justify-content-between px-3">
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="mainDishes">
+                                                        <label class="custom-control-label" for="mainDishes">Main Dishes </label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="sideDishes">
+                                                        <label class="custom-control-label" for="sideDishes">Side Dishes</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="salads">
+                                                        <label class="custom-control-label" for="salads">Salads</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="lunch">
+                                                        <label class="custom-control-label" for="lunch">Lunch</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="soups">
+                                                        <label class="custom-control-label" for="soups">Soups</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="snacks">
+                                                        <label class="custom-control-label" for="snacks">Appetizers/Snacks</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="breakfasts">
+                                                        <label class="custom-control-label" for="breakfasts">Breakfast & Brunch</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--meal type end-->
+                                            <!--season start-->
+                                            <h6 class="pt-3">Season</h6>
+                                            <div class="row container justify-content-between px-3">
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="summer">
+                                                        <label class="custom-control-label" for="summer">Summer</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="winter">
+                                                        <label class="custom-control-label" for="winter">Winter</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="autumn">
+                                                        <label class="custom-control-label" for="autumn">Autumn/Thanksgiving</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="holiday">
+                                                        <label class="custom-control-label" for="holiday">Holiday Season</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="any">
+                                                        <label class="custom-control-label" for="any">Any time</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--season end-->
+                                            <!--diet start-->
+                                            <h6 class="pt-3">Diet</h6>
+                                            <div class="row container justify-content-between px-3">
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="vegeterian">
+                                                        <label class="custom-control-label" for="vegeterian">Vegeterian Friendly</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="vegan">
+                                                        <label class="custom-control-label" for="vegan">Vegan Friendly</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="glutenfree">
+                                                        <label class="custom-control-label" for="glutenfree">Gluten-Free</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mr-sm-2 pr-3">
+                                                        <input type="checkbox" class="custom-control-input" id="peanutfree">
+                                                        <label class="custom-control-label" for="peanutfree">Peanut-Free</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--diet end-->
+                                            <div class="modal-footer mt-3 pb-0">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--bookmark modal end-->
+
+
+                            <div class="row container ml-4 pb-5 mb-4 border-bottom">
+                    <div class="col-12 col-md-3">
+                <div class="list-group">
+                        <h2 class="display-5 mb-4">Quick Links</h2>
+                        <a href="new-recipe.html" role="button" class="list-group-item list-group-item-action"><i class="fas fa-plus-circle pr-2"></i>Create a new recipe</a>
+                        <a href="submitted-recipes.html" role="button" class="list-group-item list-group-item-action"><i class="fas fa-book pr-2"></i>Recipe Submissions</a>
+                        <a href="bookmarked-recipes.html" role="button" class="list-group-item list-group-item-action"><i class="fas fa-bookmark pr-2"></i>Bookmarked Recipes</a>
+                        <a href="#" role="button" class="list-group-item list-group-item-action"><i class="fas fa-file-upload pr-2"></i>Published Recipes</a>
+                      </div>
+                    </div>
+                      <div class="col-12 col-md-9">
+                          <div class="row mb-3 container justify-content-between">
+                            <h2 class="display-5">Messages</h2>
+                            <button class="btn btn-success" type="button"><i class="fas fa-envelope pr-2"></i>Compose a new message</button>
+                            </div>
+                            <div class="card">
+                                <div class="card-body ">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
